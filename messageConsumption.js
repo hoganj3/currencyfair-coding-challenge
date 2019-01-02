@@ -1,6 +1,6 @@
-const database = require('pouchdb')
 
-export function consumeMessage(message) {
-  database
+function consumeMessage(message){
   return null
 }
+
+module.exports.consumeMessage = consumeMessage

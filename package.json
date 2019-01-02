@@ -1,19 +1,31 @@
 {
-  "name": "myApp",
+  "name": "myapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "CurrencyFair Coding Challenge",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
-  "author": "",
+  "author": "Jason Hogan",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "jest": "^23.6.0",
+    "mongodb": "^3.1.10",
     "pouchdb": "^7.0.0",
-    "pug": "^2.0.3",
-    "taffy": "^2.6.2"
-  }
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoganj3/currencyfair-coding-challenge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hoganj3/currencyfair-coding-challenge/issues"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "homepage": "https://github.com/hoganj3/currencyfair-coding-challenge"
 }
