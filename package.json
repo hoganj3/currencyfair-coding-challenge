@@ -1,0 +1,19 @@
+{
+  "name": "myApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "jest": "^23.6.0",
+    "pouchdb": "^7.0.0",
+    "pug": "^2.0.3",
+    "taffy": "^2.6.2"
+  }
+}
