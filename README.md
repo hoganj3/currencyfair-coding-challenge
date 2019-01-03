@@ -8,7 +8,7 @@ The web service is exposed using Express.js and hosted on Heroku. A remote Mongo
 
 `app.js` initialises the app and defines the protocols for responding to `GET` and `POST` requests. `server.js` starts the web service.
 
-`messageConsumption.js` is where new messages are consumed and added to the database.
+`messageConsumer.js` is where new messages are consumed and added to the database.
 
 Pug was used as a view template to dynamically generate HTML with the given message data. `index.pug` contains the template for listing messages that have been retrieved from the database, and displaying them in a bar chart.
 

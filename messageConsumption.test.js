@@ -1,4 +1,4 @@
-const messageConsumer = require('./messageConsumption')
+const messageConsumer = require('./messageConsumer')
 const MongoClient = require('mongodb').MongoClient
 const mongoURL = 'mongodb://heroku_szpwsdc0:papf0959i5bi7dt0od3bvq751@ds253783.mlab.com:53783/heroku_szpwsdc0'
 const remoteDatabaseName = 'heroku_szpwsdc0'
