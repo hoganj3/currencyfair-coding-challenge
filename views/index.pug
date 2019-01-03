@@ -2,10 +2,7 @@ doctype html
 html
   head
     script(type='text/javascript' src='../messageFrontend.js')
-    script(type='text/javascript').
-      var input = !{JSON.stringify(data)}
-      var sampleMessages = renderData(input)
     body
       ul
-        each val in data
-          li= JSON.stringify(val)
+        each val in messages
+          li= val.currencyFrom + ' ' + val.amountSell + ' exchanged to ' + val.currencyTo + ' ' + val.amountBuy + ' at ' + val.timePlaced
