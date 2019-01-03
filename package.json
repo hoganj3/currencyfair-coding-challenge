@@ -4,7 +4,8 @@
   "description": "CurrencyFair Coding Challenge",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "jest"
   },
   "author": "Jason Hogan",
   "license": "ISC",

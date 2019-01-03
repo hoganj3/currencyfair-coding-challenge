@@ -4,5 +4,8 @@ html
     script(type='text/javascript' src='../messageFrontend.js')
     body
       ul
+        // Info about the currency, amounts, and time stamp of each transfer are pulled from the message
+        // and displayed in a readable format
         each val in messages
           li= val.currencyFrom + ' ' + val.amountSell + ' exchanged to ' + val.currencyTo + ' ' + val.amountBuy + ' at ' + val.timePlaced
+      canvas#barChart(width='400', height='400')
