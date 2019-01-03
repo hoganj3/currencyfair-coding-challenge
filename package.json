@@ -4,12 +4,13 @@
   "description": "CurrencyFair Coding Challenge",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "start": "node index.js"
   },
   "author": "Jason Hogan",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "chart.js": "^2.7.3",
     "express": "^4.16.3",
     "jest": "^23.6.0",
     "mongodb": "^3.1.10",
@@ -23,9 +24,6 @@
   },
   "bugs": {
     "url": "https://github.com/hoganj3/currencyfair-coding-challenge/issues"
-  },
-  "scripts": {
-    "start": "node index.js"
   },
   "homepage": "https://github.com/hoganj3/currencyfair-coding-challenge:3000"
 }

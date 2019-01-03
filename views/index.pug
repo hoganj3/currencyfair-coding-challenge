@@ -2,8 +2,10 @@ doctype html
 html
   head
     script(type='text/javascript' src='../messageFrontend.js')
-  body
-    form
-      | Input text:
-      br
-      input#input(type='text', name='input')
+    script(type='text/javascript').
+      var input = !{JSON.stringify(data)}
+      var sampleMessages = renderData(input)
+    body
+      ul
+        each val in data
+          li= JSON.stringify(val)
