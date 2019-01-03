@@ -19,6 +19,6 @@ const data = [
 module.exports.data = data
 
 
-//{"userId": "3487298", "currencyFrom": "USD", "currencyTo": "EUR",
+// {"userId": "3487298", "currencyFrom": "USD", "currencyTo": "EUR",
 //         "amountSell": 500, "amountBuy": 379.30, "rate": 0.7588,
 //         "timePlaced" : "3-JAN-19 9:27:36", "originatingCountry" : "US"}

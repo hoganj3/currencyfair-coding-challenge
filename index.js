@@ -29,10 +29,10 @@ app.get('/', (request, response) => {
 	})
 })
 
-app.post('/', function(request, response){
+app.post('/postMessage', function(request, response){
 	let message = request.body
 	messageConsumer.consumeMessage(message)
-	response.end('Message Received!')
+	response.end('Message Received! -\n', message)
 })
 
 app.listen(process.env.PORT || port, () => {
