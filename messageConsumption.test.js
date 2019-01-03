@@ -14,5 +14,3 @@ test('it can handle non-empty messages', async () => {
     expect.assertions(1)
     await expect(messageConsumer.consumeMessage(sampleMessage, MongoClient, mongoURL, remoteDatabaseName)).toBe(true)
 })
-
-

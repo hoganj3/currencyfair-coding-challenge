@@ -2,7 +2,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-const port = 3000 // This port is only used for localhost
 
 // Details of MongoDB Database for storing messages
 const MongoClient = require('mongodb').MongoClient
@@ -52,6 +51,4 @@ app.post('/post-message', function(request, response){
 	response.end('Message Received!')
 })
 
-app.listen(process.env.PORT || port, () => {
-	console.log(`Listening on port ${port}`)
-})
+module.exports = app

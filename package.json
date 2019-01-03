@@ -2,9 +2,9 @@
   "name": "messageProcessor",
   "version": "1.0.0",
   "description": "CurrencyFair Coding Challenge",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "test": "jest"
   },
   "author": "Jason Hogan",
@@ -15,7 +15,8 @@
     "express": "^4.16.3",
     "jest": "^23.6.0",
     "mongodb": "^3.1.10",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "supertest": "^3.3.0"
   },
   "devDependencies": {},
   "repository": {
