@@ -23,6 +23,6 @@ app.post('/messageInput', function(request, response){
 	response.end('ok')
 })
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
 	console.log(`Listening on port ${port}`)
 })
