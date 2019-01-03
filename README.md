@@ -10,7 +10,7 @@ The web service is exposed using Express.js and hosted on Heroku. A remote Mongo
 
 `messageConsumption.js` is where new messages are consumed and added to the database.
 
-Pug was used as a view template to dynamically generate HTML with the given message data. `index.pug` contains the template for listing messages that have been retrieved from the database.
+Pug was used as a view template to dynamically generate HTML with the given message data. `index.pug` contains the template for listing messages that have been retrieved from the database, and displaying them in a bar chart.
 
 The frontend of the web service is hosted at [https://currencyfair-coding-challenge.herokuapp.com/](https://currencyfair-coding-challenge.herokuapp.com/). The data is displayed as a readable list containing some key data from each message.
 

@@ -1,11 +1,55 @@
 doctype html
 html
   head
-    script(type='text/javascript' src='../messageFrontend.js')
-    body
-      ul
-        // Info about the currency, amounts, and time stamp of each transfer are pulled from the message
-        // and displayed in a readable format
-        each val in messages
-          li= val.currencyFrom + ' ' + val.amountSell + ' exchanged to ' + val.currencyTo + ' ' + val.amountBuy + ' at ' + val.timePlaced
-      canvas#barChart(width='400', height='400')
+    title CurrencyFair Transactions
+  body
+    h2 CurrencyFair Recent Transactions
+    canvas(id = 'barChart' width = '100' height = '50' responsive = true)
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js')
+    script(type='text/javascript').
+      window.onload = function() {
+        let messageList = !{JSON.stringify(messages)}
+        let transactionData = []
+        messageList.forEach(function (message) {
+          let index = transactionData.findIndex(x => x.name === message.originatingCountry)
+          if(index === -1){
+            transactionData.push({ name: message.originatingCountry, transactions : 1 })
+          } else {
+            transactionData[index].transactions++
+          }
+        })
+
+        let ctx = document.getElementById('barChart').getContext('2d')
+        var chart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: transactionData.map(country => country.name),
+            datasets: [
+              {
+                label: 'Number of Transactions per Country',
+                backgroundColor: ['#605F5E', '#09634B', '#FF6600', '#247BA0', 'A02B2B'],
+                data: transactionData.map(country => country.transactions)
+              }
+            ]
+          },
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            },
+            legend: {display: false},
+            title: {
+              display: true,
+              text: 'Number of Transactions'
+            }
+          }
+        })
+      }
+    //Info about the currency, amounts, and time stamp of each transfer are pulled from the message
+    //and displayed in a readable format
+    ul
+      each val in messages
+        li= 'Origin: ' + val.originatingCountry + ', ' + val.currencyFrom + ' ' + val.amountSell + ' exchanged to ' + val.currencyTo + ' ' + val.amountBuy + ' at ' + val.timePlaced
