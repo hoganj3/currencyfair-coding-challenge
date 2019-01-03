@@ -30,8 +30,8 @@ app.get('/', (request, response) => {
 })
 
 app.post('/', function(request, response){
-	// let message = request.body
-	// messageConsumer.consumeMessage(message)
+	let message = request.body
+	messageConsumer.consumeMessage(message)
 	response.end('Message Received!')
 })
 
