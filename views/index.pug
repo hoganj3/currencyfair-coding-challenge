@@ -5,25 +5,36 @@ html
   body
     h2 CurrencyFair Recent Transactions
     canvas(id = 'barChart' width = '100' height = '50' responsive = true)
+    // Chart.js used for creating bar chart
     script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js')
     script(type='text/javascript').
       window.onload = function() {
         let messageList = !{JSON.stringify(messages)}
+        // Instanciate array to contain objects representing countries and the number of
+        // transactions originating from them
         let transactionData = []
         messageList.forEach(function (message) {
-          let index = transactionData.findIndex(x => x.name === message.originatingCountry)
+          // For each message - try find an object in the local array of transactions
+          // that represents the originating country of the message
+          let index = transactionData.findIndex(entry => entry.name === message.originatingCountry)
+          // If no such entry exists 'index' will equal -1
           if(index === -1){
+            // In which case make a new entry in the transactions array, with staring value of 1
             transactionData.push({ name: message.originatingCountry, transactions : 1 })
           } else {
+            // Otherwise, if the country is already present, increment its value
             transactionData[index].transactions++
           }
         })
 
+        // Create new bar chart object linked to the barChart in the <canvas> above
         let ctx = document.getElementById('barChart').getContext('2d')
         var chart = new Chart(ctx, {
           type: 'bar',
           data: {
+            // Labels on x axis are the names of individual countries
             labels: transactionData.map(country => country.name),
+            // Data on y axis is the number of transactions for each country
             datasets: [
               {
                 label: 'Number of Transactions per Country',
@@ -36,6 +47,7 @@ html
             scales: {
               yAxes: [{
                 ticks: {
+                  // Force y axis to begin at zero
                   beginAtZero: true
                 }
               }]
